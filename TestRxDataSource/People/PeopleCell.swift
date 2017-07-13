@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PeopleCell: UITableViewCell {
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+
+    let disposeBag = DisposeBag()
+    var viewModel: PeopleViewModel = PeopleViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        self.viewModel.userName.asObservable().bind(to: self.userNameLabel.rx.text).addDisposableTo(disposeBag)
+        self.viewModel.age.asObservable().map{"\($0)"}.bind(to: self.ageLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bindTo(viewModel: PeopleViewModel){
+        self.viewModel.userName.value = viewModel.userName.value
+        self.viewModel.age.value = viewModel.age.value
     }
 
 }
