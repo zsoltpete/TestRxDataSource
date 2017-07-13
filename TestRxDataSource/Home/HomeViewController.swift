@@ -12,24 +12,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.setTitle()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setTitle(){
+        self.title = "Test RxDataSources"
     }
-    */
+    
+    @IBAction func showMultiplySections(_ sender: Any) {
+        self.performSegue(withIdentifier: Constants.Segues.ShowPeopleSegue, sender: nil)
+
+    }
 
 }
