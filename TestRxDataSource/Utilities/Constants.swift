@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+
+struct Constants {
+    
+    struct Cells {
+        static let PeopleCell = "PeopleCell"
+    }
+    
+}
