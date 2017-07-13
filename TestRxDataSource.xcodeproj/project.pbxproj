@@ -19,6 +19,9 @@
 		503E790B1F17EF62003FC6CF /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E790A1F17EF62003FC6CF /* PeopleViewModel.swift */; };
 		503E790D1F17F571003FC6CF /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E790C1F17F571003FC6CF /* PeopleCell.swift */; };
 		503E79131F17F5B6003FC6CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E79121F17F5B6003FC6CF /* Constants.swift */; };
+		503E79151F18068F003FC6CF /* PeopleHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E79141F18068F003FC6CF /* PeopleHeaderCell.swift */; };
+		503E79171F180754003FC6CF /* PeopleHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E79161F180754003FC6CF /* PeopleHeaderViewModel.swift */; };
+		503E791A1F180F26003FC6CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E79191F180F26003FC6CF /* HomeViewController.swift */; };
 		8823FC3D09A1181DA470C80F /* Pods_TestRxDataSourceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E209B6EA072F4006498DA837 /* Pods_TestRxDataSourceUITests.framework */; };
 		A259053AA0EFD181A1CC2A23 /* Pods_TestRxDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DBF8A21C35ECD348D32EB5 /* Pods_TestRxDataSource.framework */; };
 		CA6773D692AA0A66D621267E /* Pods_TestRxDataSourceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE8753A78A518A1E7CAA902 /* Pods_TestRxDataSourceTests.framework */; };
@@ -63,6 +66,9 @@
 		503E790A1F17EF62003FC6CF /* PeopleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleViewModel.swift; path = People/PeopleViewModel.swift; sourceTree = "<group>"; };
 		503E790C1F17F571003FC6CF /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleCell.swift; path = People/PeopleCell.swift; sourceTree = "<group>"; };
 		503E79121F17F5B6003FC6CF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
+		503E79141F18068F003FC6CF /* PeopleHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleHeaderCell.swift; path = People/PeopleHeaderCell.swift; sourceTree = "<group>"; };
+		503E79161F180754003FC6CF /* PeopleHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleHeaderViewModel.swift; path = People/PeopleHeaderViewModel.swift; sourceTree = "<group>"; };
+		503E79191F180F26003FC6CF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		5856CDC5BCE532E558B24427 /* Pods-TestRxDataSourceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRxDataSourceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestRxDataSourceUITests/Pods-TestRxDataSourceUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F7DDCD6FAF2C39E2B7DA7CD /* Pods-TestRxDataSourceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRxDataSourceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestRxDataSourceTests/Pods-TestRxDataSourceTests.release.xcconfig"; sourceTree = "<group>"; };
 		B84C02BDA8D106983DDE1861 /* Pods-TestRxDataSource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRxDataSource.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestRxDataSource/Pods-TestRxDataSource.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 				503E79081F17EBF8003FC6CF /* PeopleSection.swift */,
 				503E790A1F17EF62003FC6CF /* PeopleViewModel.swift */,
 				503E790C1F17F571003FC6CF /* PeopleCell.swift */,
+				503E79141F18068F003FC6CF /* PeopleHeaderCell.swift */,
+				503E79161F180754003FC6CF /* PeopleHeaderViewModel.swift */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 		503E790E1F17F578003FC6CF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				503E79181F180F0C003FC6CF /* Home */,
 				503E790F1F17F582003FC6CF /* Constants */,
 			);
 			name = Utilities;
@@ -192,6 +201,14 @@
 				503E79121F17F5B6003FC6CF /* Constants.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		503E79181F180F0C003FC6CF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				503E79191F180F26003FC6CF /* HomeViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		51DD97B57483D5D14C01C3A5 /* Frameworks */ = {
@@ -493,8 +510,11 @@
 				503E790D1F17F571003FC6CF /* PeopleCell.swift in Sources */,
 				503E78D81F17E93A003FC6CF /* AppDelegate.swift in Sources */,
 				503E79131F17F5B6003FC6CF /* Constants.swift in Sources */,
+				503E791A1F180F26003FC6CF /* HomeViewController.swift in Sources */,
 				503E790B1F17EF62003FC6CF /* PeopleViewModel.swift in Sources */,
 				503E79071F17EBD1003FC6CF /* PeopleViewController.swift in Sources */,
+				503E79171F180754003FC6CF /* PeopleHeaderViewModel.swift in Sources */,
+				503E79151F18068F003FC6CF /* PeopleHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
