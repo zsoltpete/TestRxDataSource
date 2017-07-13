@@ -21,10 +21,6 @@ class PeopleViewModel: NSObject {
         super.init()
     }
     
-    public static func ==(lhs: PeopleViewModel, rhs: PeopleViewModel) -> Bool {
-        return true
-    }
-    
     override init() {
         self.userName.value = ""
         self.age.value = 0
