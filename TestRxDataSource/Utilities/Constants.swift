@@ -13,6 +13,11 @@ struct Constants {
     
     struct Cells {
         static let PeopleCell = "PeopleCell"
+        static let PeopleHeaderCell = "PeopleHeaderCell"
+    }
+    
+    struct Segues {
+        static let ShowPeopleSegue = "ShowPeopleSegue"
     }
     
 }
