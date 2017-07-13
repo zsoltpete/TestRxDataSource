@@ -14,6 +14,9 @@ struct Constants {
     struct Cells {
         static let PeopleCell = "PeopleCell"
         static let PeopleHeaderCell = "PeopleHeaderCell"
+        static let PartnerMessageCell = "PartnerMessageCell"
+        static let UserMessageCell = "UserMessageCell"
+        
     }
     
     struct Segues {
