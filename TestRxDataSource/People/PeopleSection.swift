@@ -7,7 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-class PeopleSection: NSObject {
+struct PeopleSection {
+    var header: String
+    var items: [PeopleViewModel]
+}
 
+extension PeopleSection : SectionModelType {
+    typealias Item = PeopleViewModel
+    
+    var identity: String {
+        return header
+    }
+    
+    init(original: PeopleSection, items: [PeopleViewModel]) {
+        self = original
+        self.items = items
+    }
 }
