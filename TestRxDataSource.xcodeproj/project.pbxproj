@@ -143,8 +143,9 @@
 		503E78D61F17E93A003FC6CF /* TestRxDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				503E790E1F17F578003FC6CF /* Utilities */,
 				503E79051F17EBB3003FC6CF /* People */,
+				503E79181F180F0C003FC6CF /* Home */,
+				503E790E1F17F578003FC6CF /* Utilities */,
 				503E78D71F17E93A003FC6CF /* AppDelegate.swift */,
 				503E78D91F17E93A003FC6CF /* ViewController.swift */,
 				503E78DB1F17E93A003FC6CF /* Main.storyboard */,
@@ -189,7 +190,6 @@
 		503E790E1F17F578003FC6CF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				503E79181F180F0C003FC6CF /* Home */,
 				503E790F1F17F582003FC6CF /* Constants */,
 			);
 			name = Utilities;
