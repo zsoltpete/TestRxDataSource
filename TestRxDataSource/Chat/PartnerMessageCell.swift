@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PartnerMessageCell: UITableViewCell {
 
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    let disposeBag = DisposeBag()
+    var viewModel: MessageViewModel = MessageViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        self.viewModel.message.asObservable().bind(to: self.messageLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bindTo(viewModel: MessageViewModel){
+        self.viewModel.message.value = viewModel.message.value
     }
 
 }

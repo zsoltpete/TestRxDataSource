@@ -7,7 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-class ChatSection: NSObject {
+struct ChatSection {
+    var header: String
+    var items: [MessageViewModel]
+}
 
+extension ChatSection : SectionModelType {
+    
+    var identity: String {
+        return header
+    }
+    
+    init(original: ChatSection, items: [MessageViewModel]) {
+        self = original
+        self.items = items
+    }
 }
