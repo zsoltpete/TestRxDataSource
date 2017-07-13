@@ -23,5 +23,8 @@ class HomeViewController: UIViewController {
         self.performSegue(withIdentifier: Constants.Segues.ShowPeopleSegue, sender: nil)
 
     }
+    @IBAction func showDifferentCells(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowDifferentCellsSegue", sender: nil)
+    }
 
 }
