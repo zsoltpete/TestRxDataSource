@@ -38,6 +38,7 @@ class PeopleViewController: UITableViewController {
         self.initDevelopers()
         self.initTableView()
         self.configureCell()
+        self.configureHeader()
         self.bindSections()
     }
     
@@ -64,6 +65,12 @@ class PeopleViewController: UITableViewController {
         }
     }
     
+    func configureHeader(){
+        dataSource.titleForHeaderInSection = { ds, index in
+            return "d"
+        }
+    }
+    
     func bindSections(){
         sections.asObservable()
             .bind(to: tableView.rx.items(dataSource: dataSource))
@@ -81,5 +88,24 @@ class PeopleViewController: UITableViewController {
     func addDeveloper(){
         self.sections.value[2].items.append(PeopleViewModel(userName: "Saca", age: 21))
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let cell: PeopleHeaderCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.PeopleHeaderCell) as? PeopleHeaderCell else {
+            return UIView()
+        }
+        cell.bindTo(team: self.sections.value[section].header)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+
+    }
+    
+
     
 }

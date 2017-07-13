@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class PeopleHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var teamLabel: UILabel!
+    
+    let disposeBag = DisposeBag()
+    var viewModel: PeopleHeaderViewModel = PeopleHeaderViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        self.viewModel.team.asObservable().bind(to: self.teamLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bindTo(team: String){
+        self.viewModel.team.value = team
     }
 
 }

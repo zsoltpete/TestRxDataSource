@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PeopleHeaderViewModel: NSObject {
+    
+    var team: Variable<String> = Variable("")
 
 }
