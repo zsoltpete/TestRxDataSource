@@ -17,7 +17,6 @@ struct PeopleSection {
 }
 
 extension PeopleSection : SectionModelType {
-    typealias Item = PeopleViewModel
     
     var identity: String {
         return header

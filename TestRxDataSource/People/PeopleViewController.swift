@@ -38,7 +38,6 @@ class PeopleViewController: UITableViewController {
         self.initDevelopers()
         self.initTableView()
         self.configureCell()
-        self.configureHeader()
         self.bindSections()
     }
     
@@ -62,12 +61,6 @@ class PeopleViewController: UITableViewController {
             let cell: PeopleCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.PeopleCell) as! PeopleCell
             cell.bindTo(viewModel: item)
             return cell
-        }
-    }
-    
-    func configureHeader(){
-        dataSource.titleForHeaderInSection = { ds, index in
-            return "d"
         }
     }
     
@@ -101,11 +94,4 @@ class PeopleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-
-    }
-    
-
-    
 }
